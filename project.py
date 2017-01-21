@@ -7,9 +7,13 @@ import bokeh
 # create file
 df = pd.read_csv('cereal.csv')
 
+# import palette
+from bokeh.palettes import Pastel1
+pal = Pastel1[5]
+
 # first graph: Box Plot of calories vs. fat in cereal
 from bokeh.charts import BoxPlot, output_file, save
-kayleen = BoxPlot(df, label='calories', values='fat', title="Calories vs. Fat", color='calories')
+kayleen = BoxPlot(df, label='calories', values='fat', title="Calories vs. Fat", color='calories',palette=pal)
 
 output_file('kayleen.html')
 save(kayleen)
@@ -23,14 +27,13 @@ save(hoshi)
 
 # third graph: bar graph of average sodium for fat values
 from bokeh.charts import Bar, output_file, save
-suga = Bar(df, 'fat', values='sodium', agg='mean', title='Average Sodium Levels vs. Fat Levels', color='#C8FCB3')
+suga = Bar(df, 'fat', values='sodium', agg='mean', title='Average Sodium Levels vs. Fat Levels', color='fat', palette=pal)
 
 output_file('suga.html')
 save(suga)
 
 # fourth graph: grouped bar graph of average sodium for calories, grouped on shelf value
 from bokeh.charts import Bar, output_file, save
-from bokeh.palettes import Pastel1
 pal = Pastel1[3]
 
 akaashi = Bar(df, 'calories', values='sodium', agg='mean', group='shelf', title='Average Sodium level per Calorie Amount, grouped by shelf value', color='shelf', palette=pal, background_fill_color='#FFFEBC')
