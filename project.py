@@ -17,11 +17,11 @@ save(kayleen)           #save file!!!
 # second graph: pie chart of how many chinese people in each borough
 from bokeh.charts import Donut, output_file, save
 
-hoshi = Donut(df, label=['Borough', 'Total Asian - Chinese and Taiwanese'], values='Total Asian - Chinese and Taiwanese', text_font_size='7pt', 
+hoshi = Donut(df, label=['Borough','Total Asian - Chinese and Taiwanese'], values='Total Asian - Chinese and Taiwanese', text_font_size='7pt', 
 title='Total Chinese and Taiwanese in NYC Boroughs (2010)', color=['#A4EED7','#C7EEA4','#FBF37C','#F9AAA2','#CAA2F9'])
+
 
 output_file('hoshi.html')
 save(hoshi)             #save the file!
 
 # third graph: 
-
