@@ -1,5 +1,5 @@
-* Bar graph corresponding the boroughs with the total asian population
-* Scatter plot to show where most of each asian population lives relative to boroughs (boroughs on x axis)
-* Pie chart to organize a certain population on how it is distributed among the boroughs
-* a figure like the texas.py in the Bokeh Gallery, which can show the frequency of a population in the boroughs
-* area plot showing the frequency of each population in a certain borough
+* Box Plot comparing the the amount of calories to amount of fat in the cereals
+* Scatter plot of sugar values vs. the total amount of carb values
+* Bar graph of how many calories are in each cereal brand -- may be hard to do because there's too many cereal brands, will make the axis too crowded
+* Bar graph comparing values of fat to the average amount of sodium
+* Grouped bar graph of average sodium level for calorie amount, grouped on the shelf value

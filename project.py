@@ -1,3 +1,4 @@
+# NOTE: this is a master file that includes the coding for all four of the visualizations. Individual codes are under their respective names (ex. boxplot.py)
 # import the modules
 import csv
 import pandas as pd
@@ -9,7 +10,7 @@ df = pd.read_csv('cereal.csv')
 
 # import palette
 from bokeh.palettes import Pastel1
-pal = Pastel1[5]
+pal = Pastel1[5]        #choose amount of palette needed
 
 # first graph: Box Plot of calories vs. fat in cereal
 from bokeh.charts import BoxPlot, output_file, save
