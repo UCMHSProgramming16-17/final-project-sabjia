@@ -21,17 +21,23 @@ save(kayleen)
 
 # second graph: Scatter plot of carbs vs. sugars
 from bokeh.charts import Scatter, output_file, save
-hoshi = Scatter(df, x='carbo', y='sugars', title='Carbs vs. Sugars', xlabel='Total Carbohydrates per serving (g)', ylabel='Total Sugar per serving (g)', color='#CAA2F9')
-
-output_file('hoshi.html')
-save(hoshi)
-
-# third graph: bar graph of average sodium for fat values
-from bokeh.charts import Bar, output_file, save
-suga = Bar(df, 'fat', values='sodium', agg='mean', title='Average Sodium Levels vs. Fat Levels', color='fat', palette=pal)
+# make hovertool
+tooltips=[
+    ('Name', '@name'),
+    ('Carb value', '@carbo'),
+    ('Sugar value', '@sugars')
+]
+suga = Scatter(df, x='carbo', y='sugars', title='Carbs vs. Sugars', xlabel='Total Carbohydrates per serving (g)', ylabel='Total Sugar per serving (g)', color='#CAA2F9', tooltips=tooltips)
 
 output_file('suga.html')
 save(suga)
+
+# third graph: bar graph of average sodium for fat values
+from bokeh.charts import Bar, output_file, save
+hoshi = Bar(df, 'fat', values='sodium', agg='mean', title='Average Sodium Levels vs. Fat Levels', color='fat', palette=pal)
+
+output_file('hoshi.html')
+save(hoshi)
 
 # fourth graph: grouped bar graph of average sodium for calories, grouped on shelf value
 from bokeh.charts import Bar, output_file, save
